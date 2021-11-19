@@ -2,10 +2,12 @@ package strategy
 
 import cards.Card
 
-trait Strategy {
-  def move(score: Integer)
+import scala.collection.mutable._
 
-  def requestCard(globaldeck: => List[Card])
+trait Strategy {
+  def move(score: Integer, playerDeck : => Stack[Card], globalDeck : => Stack[Card])
+
+  def requestCard(globalDeck: => Stack[Card], playerDeck: => Stack[Card])
 
   def stay()
 
