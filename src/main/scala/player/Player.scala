@@ -11,7 +11,7 @@ class Player(val id: Integer, val strategy: DefaultStrategy = new DefaultStrateg
 
     def initialMove(globalDeck: Stack[Card]): Unit = { playerDeck.push(globalDeck.pop); playerDeck.push(globalDeck.pop) }
 
-    def nextMove(globalDeck: Stack[Card] ): Unit = strategy.move(score, playerDeck, globalDeck)
+    def nextMove(globalDeck: Stack[Card] ): Unit = strategy.move(score, playerDeck, globalDeck, id)
 
     def score() : Int =  if(!playerDeck.isEmpty) playerDeck.map(_.value._2).sum else 0
 }
