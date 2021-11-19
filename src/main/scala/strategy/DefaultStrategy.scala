@@ -6,11 +6,11 @@ import scala.collection.mutable._
 
 class DefaultStrategy extends Strategy {
 
-  def move(score: Integer, playerDeck : => Stack[Card], globalDeck : => Stack[Card]) = {
+  def move(score: Integer, playerDeck : => Stack[Card], globalDeck : => Stack[Card], ): Unit = {
     score match{
-      case score < 17 => requestCard(globalDeck, playerDeck)
-      case score if(score > 17 && score < 21) => stay()
-      case score < 21 => forfeit()
+      case score if(score < 17 ) => requestCard(globalDeck, playerDeck)
+      case score if(score >= 17 && score < 21) => stay()
+      case score if(score > 21) => forfeit()
     }
   }
 
