@@ -1,3 +1,5 @@
+package player
+
 class Player {
 
 }
